@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,8 +13,44 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Everything related to the Clock logo */
+
+.logohold {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
+}
+
+.App-clock-logo {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.App-hourhand-logo {
+  position: absolute;
+  top: 95px;
+  left: 142px;
+  transform-origin: bottom center;
+}
+
+.App-minutehand-logo {
+  position: absolute;
+  top: 36px;
+  left: 140px;
+  transform-origin: bottom center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-minutehand-logo {
+    animation: App-logo-spin infinite linear;
+    animation-duration: 60s;
+  }
+
+  .App-hourhand-logo {
+    animation: App-logo-spin infinite 120s linear;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -37,12 +62,43 @@
   }
 }
 
-#time {
-  margin-top: 10%;
-}
+/* Everything related to user input and number display */
 
 h2 {
   display: inline-block;
   padding-right: 5px;
   margin-bottom: 0%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#animnumbers {
+  display: inline-block;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#timeinputlabel {
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#timeinput {
+  background-color: #282c34;
+  color: white;
+  border-radius: 20px;
+}
+
+select {
+  margin-top: 10%;
+  background-image: linear-gradient(to right, rgb(176, 13, 176), pink);
+  color: white;
+  border-radius: 20px;
+}
+
+select:hover  {
+  font-size: 15px;
+}
+
+option {
+  background-color: purple;
 }

@@ -1,13 +1,20 @@
-import logo from './logo.svg';
+import clockLogo from './imgs/Clock.png';
+import hourHandLogo from './imgs/HourHand.png';
+import minuteHandLogo from './imgs/MinuteHand.png';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web'
 
+//Main website display
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className='logohold'>
+          <img src={clockLogo} className="App-clock-logo" alt="clocklogo" />
+          <img src={hourHandLogo} className="App-hourhand-logo" alt="hourlogo" />
+          <img src={minuteHandLogo} className="App-minutehand-logo" alt="minutelogo" />
+        </div>
         <div>
           <Dropdown />
         </div>
@@ -16,15 +23,18 @@ function App() {
   );
 }
 
+//Animates the numbers to flip as the user input changes
 function AnimNum({ num }){
   const { val } = useSpring({
     from: { val: 0 },
     val: num
   });
   
-  return <animated.h2 style={{"display" : "inline-block"}}>{val.to((num) => num.toFixed(5))}</animated.h2>
+  return <animated.h2 id='animnumbers'>{val.to((num) => num.toFixed(5))}</animated.h2>
 }
 
+//Creates the input field related UI
+//Changes the number values as the user enters data or changes time type
 function Dropdown(){
   const [holdPrevValue, setHoldPrevValue] = useState(0);
   const [optionChosen, setOptionChosen] = useState("Seconds");
@@ -32,6 +42,7 @@ function Dropdown(){
   const [minutesVal, setMinutesVal] = useState(0);
   const [hoursVal, setHoursVal] = useState(0);
 
+  //Converts the time respectively
   function convertTime(value){
     // alert(value);
     if(optionChosen === "Seconds"){
@@ -51,9 +62,15 @@ function Dropdown(){
     }
   }
 
+  //Holds the previous user entered value
+  //Will use previous value to calculate when time type is changed
   useEffect(() => {
+    if(isNaN(holdPrevValue)){
+      setHoldPrevValue(0);
+    }
+
     convertTime(holdPrevValue);
-  }
+  }, [holdPrevValue, convertTime]
   );
 
   return (
@@ -70,7 +87,7 @@ function Dropdown(){
         <h2>Hours: </h2>
         <AnimNum num={hoursVal}></AnimNum>
       </div>
-      <label for="timeinput">{"Convert: "}</label>
+      <label id='timeinputlabel' for="timeinput">{"Convert: "}</label>
       <input id='timeinput' type='number' min='0' placeholder='Insert number here...' 
         onChange={(e) => {
           setHoldPrevValue(e.target.valueAsNumber);
