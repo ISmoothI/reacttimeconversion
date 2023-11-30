@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ReactTimeConversion/static/css/main.9378cc79.css",
-    "main.js": "/ReactTimeConversion/static/js/main.3f1c2ddd.js",
-    "static/js/787.271e26cf.chunk.js": "/ReactTimeConversion/static/js/787.271e26cf.chunk.js",
-    "static/media/Clock.png": "/ReactTimeConversion/static/media/Clock.7b3146f9456a18bc2a81.png",
-    "index.html": "/ReactTimeConversion/index.html",
-    "main.9378cc79.css.map": "/ReactTimeConversion/static/css/main.9378cc79.css.map",
-    "main.3f1c2ddd.js.map": "/ReactTimeConversion/static/js/main.3f1c2ddd.js.map",
-    "787.271e26cf.chunk.js.map": "/ReactTimeConversion/static/js/787.271e26cf.chunk.js.map"
+    "main.css": "/reacttimeconversion/static/css/main.9378cc79.css",
+    "main.js": "/reacttimeconversion/static/js/main.55e46eb7.js",
+    "static/js/787.271e26cf.chunk.js": "/reacttimeconversion/static/js/787.271e26cf.chunk.js",
+    "static/media/Clock.png": "/reacttimeconversion/static/media/Clock.7b3146f9456a18bc2a81.png",
+    "index.html": "/reacttimeconversion/index.html",
+    "main.9378cc79.css.map": "/reacttimeconversion/static/css/main.9378cc79.css.map",
+    "main.55e46eb7.js.map": "/reacttimeconversion/static/js/main.55e46eb7.js.map",
+    "787.271e26cf.chunk.js.map": "/reacttimeconversion/static/js/787.271e26cf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9378cc79.css",
-    "static/js/main.3f1c2ddd.js"
+    "static/js/main.55e46eb7.js"
   ]
 }
