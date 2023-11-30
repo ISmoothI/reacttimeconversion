@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ReactTimeConversion/static/css/main.9378cc79.css",
+    "main.js": "/ReactTimeConversion/static/js/main.3f1c2ddd.js",
+    "static/js/787.271e26cf.chunk.js": "/ReactTimeConversion/static/js/787.271e26cf.chunk.js",
+    "static/media/Clock.png": "/ReactTimeConversion/static/media/Clock.7b3146f9456a18bc2a81.png",
+    "index.html": "/ReactTimeConversion/index.html",
+    "main.9378cc79.css.map": "/ReactTimeConversion/static/css/main.9378cc79.css.map",
+    "main.3f1c2ddd.js.map": "/ReactTimeConversion/static/js/main.3f1c2ddd.js.map",
+    "787.271e26cf.chunk.js.map": "/ReactTimeConversion/static/js/787.271e26cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9378cc79.css",
+    "static/js/main.3f1c2ddd.js"
+  ]
+}
