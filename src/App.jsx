@@ -8,7 +8,7 @@ import AgeCalculator from './AgeCalculator.jsx';
 import TimeCalculator from './TimeCalculator.jsx';
 import Calculator from './Calculator.jsx';
 import UnitCalculator from './UnitCalculator.jsx';
-
+import lightmode from './imgs/sunfigma.png'
 
 //Main website display
 function App() {
@@ -63,31 +63,54 @@ function App() {
         <header>
           <nav className="navbar">
             <h1 className="navbar-sitetitle">
-              <a href="/reacttimeconversion">The (Almost) Everything Calculator</a>
+              <a href="/reacttimeconversion">YACW</a>
             </h1>
-            <ul>
-              <li>
-                <a href="/agecalculator"> Age Calculator </a>
-                <button onClick={addAgeCalcComponent}>+</button>
+            <ul className='navbar-siteoptions'>
+              {/* <li>
+                <a>Whats New?</a>
+              </li> */}
+              <li className='navbar-calculator-dropdown'>
+                <div>
+                  <h4>Calculators</h4>
+                  <div className='navbar-calculator-content'>
+                    <div className='nav-options'>
+                      <button onClick={addAgeCalcComponent}>+</button>
+                      <a href="/agecalculator">Age</a>
+                    </div>
+                    <div>
+                      <button onClick={addCalculatorComponent}>+</button>
+                      <a href="/calculator">Basic</a>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li>
-                <a href="/timecalculator"> Time Calculator </a>
-                <button onClick={addTimeCalcComponent}>+</button>
-              </li>
-              <li>
-                <a href="/calculator"> Calculator </a>
-                <button onClick={addCalculatorComponent}>+</button>
-              </li>
-              <li>
-                <a href="/unitcalculator"> Unit Calculator </a>
-                <button onClick={addUnitCalcComponent}>+</button>
+              <li className='navbar-conversions-dropdown'>
+                <div>
+                  <h4>Conversions</h4>
+                  <div className='navbar-conversions-content'>
+                    <div>
+                      <button onClick={addTimeCalcComponent}>+</button>
+                      <a href="/timecalculator">Time</a>
+                    </div>
+                    <div>
+                      <button onClick={addUnitCalcComponent}>+</button>
+                      <a href="/unitcalculator">Unit</a>
+                    </div>
+                  </div>
+                </div>
               </li>
             </ul>
+            <img className='navbar-modetoggle' src={lightmode} alt='Sun'/>
           </nav>
         </header>
       </div>
       {component}
       {components}
+      {/* <footer>
+        <p>
+          Author: 
+        </p>
+      </footer> */}
     </>
   );
 }

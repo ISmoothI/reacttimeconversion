@@ -1,0 +1,20 @@
+-------------------Unit Calculator--------------------------
+
+OG Checkbox HTML code:
+
+<input id='checkbox-inch' type='checkbox' onChange={() => { setInches({value: inches.value, visible: !inches.visible}); }}></input>
+<label htmlFor='checkbox-inch'>Inch</label>
+<input id='checkbox-foot' type='checkbox' onChange={() => { setFoot({value: foot.value, visible: !foot.visible}); }}></input>
+<label htmlFor='checkbox-foot'>Foot</label>
+<input id='checkbox-kilometer' type='checkbox' onChange={() => { setKilometers({value: kilometers.value, visible: !kilometers.visible}); }}></input>
+<label htmlFor='checkbox-kilometer'>Kilometers</label>
+<input id='checkbox-meter' type='checkbox' onChange={() => { setMeters({value: meters.value, visible: !meters.visible}); }}></input>
+<label htmlFor='checkbox-meter'>Meters</label>
+<input id='checkbox-centimeter' type='checkbox' onChange={() => { setCentimeters({value: centimeters.value, visible: !centimeters.visible}); }}></input>
+<label htmlFor='checkbox-centimeter'>Centimeters</label>
+<input id='checkbox-millimeter' type='checkbox' onChange={() => { setMillimeters({value: millimeters.value, visible: !millimeters.visible}); }}></input>
+<label htmlFor='checkbox-millimeter'>Millimeters</label>
+<input id='checkbox-mile' type='checkbox' onChange={() => { setMile({value: mile.value, visible: !mile.visible}); }}></input>
+<label htmlFor='checkbox-mile'>Miles</label>
+<input id='checkbox-yard' type='checkbox' onChange={() => { setYard({value: yard.value, visible: !yard.visible}); }}></input>
+<label htmlFor='checkbox-yard'>Yard</label>

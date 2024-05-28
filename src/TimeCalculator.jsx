@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSpring, animated } from '@react-spring/web'
+import AnimateNumber from './AnimateNumber';
 
 import clockLogo from './imgs/Clock.png';
 import hourHandLogo from './imgs/HourHand.png';
@@ -46,48 +46,29 @@ function TimeCalculator(){
 
   
   return(
-    <div className="App">
-      <header className="App-header">
-        <h1>Time Calculator</h1>
-        <div className='logohold'>
-          <img src={clockLogo} className="App-clock-logo" alt="clocklogo" />
-          <img src={hourHandLogo} className="App-hourhand-logo" alt="hourlogo" />
-          <img src={minuteHandLogo} className="App-minutehand-logo" alt="minutelogo" />
-        </div>
-        <div>
-          <div>
-            <h2>Seconds: </h2>
-            <AnimNum num={secondsVal}></AnimNum>
-          </div>
-          <div>
-            <h2>Minutes: </h2>
-            <AnimNum num={minutesVal}></AnimNum>
-          </div>
-          <div>
-            <h2>Hours: </h2>
-            <AnimNum num={hoursVal}></AnimNum>
-          </div>
-          <label id='timeinputlabel' htmlFor="timeinput">{"Convert: "}</label>
-          <input id='timeinput' type='number' min='0' placeholder='Insert number here...' onChange={(e) => { setHoldPrevValue(e.target.valueAsNumber); }}></input>
-          <select name="time" id="time" onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
-            <option value="seconds">Seconds</option>
-            <option value="minutes">Minutes</option>
-            <option value="hours">Hours</option>
-          </select>
-        </div>
-      </header>
+    <div className="timecalculator-main">
+      <h1>Time Calculator</h1>
+      <div className='logohold'>
+        <img src={clockLogo} className="App-clock-logo" alt="clocklogo" />
+        <img src={hourHandLogo} className="App-hourhand-logo" alt="hourlogo" />
+        <img src={minuteHandLogo} className="App-minutehand-logo" alt="minutelogo" />
+      </div>
+      <div>
+        <AnimateNumber preText={"Seconds: "} num={secondsVal}></AnimateNumber>
+        <AnimateNumber preText={"Minutes: "} num={minutesVal}></AnimateNumber>
+        <AnimateNumber preText={"Hours: "} num={hoursVal}></AnimateNumber>
+      </div>
+      <div>
+        <label id='timeinputlabel' htmlFor="timeinput">{"Convert: "}</label>
+        <input id='timeinput' type='number' min='0' placeholder='Insert number here...' onChange={(e) => { setHoldPrevValue(e.target.valueAsNumber); }}></input>
+        <select name="time" id="time" onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
+          <option value="seconds">Seconds</option>
+          <option value="minutes">Minutes</option>
+          <option value="hours">Hours</option>
+        </select>
+      </div>
     </div>
   );
-}
-
-//Animates the numbers to flip as the user input changes
-function AnimNum({ num }){
-  const { val } = useSpring({
-    from: { val: 0 },
-    val: num
-  });
-  
-  return <animated.h2 id='animnumbers'>{val.to((num) => num.toFixed(5))}</animated.h2>
 }
   
 export default TimeCalculator;

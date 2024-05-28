@@ -1,17 +1,203 @@
-.App {
-  text-align: center;
+/* .App {
+  @import url();
+} */
+
+* {
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-header, .agecalc-home, .home-main, .calculator-main, .unitcalculator-main {
-  background-color: #282c34;
+.timecalculator-main, .agecalc-home, .home-main, .calculator-main, .unitcalculator-main {
+  background-color: #232946;
+  background-position: top;
+  background-repeat: repeat;
+  background-size: contain;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2em 0em 0em 0em;
+  /* justify-content: center; */
+  font-size: calc(5px + 2vmin);
   color: white;
+  text-align: center;
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
+
+footer{
+  background-color: #1d2025;
+  min-height: 100vh;
+}
+
+/* Navbar */
+
+.navbar{
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0em 1em;
+}
+
+.navbar-sitetitle{
+  color: #ce8964;
+  font-size: x-large;
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li{
+  padding: 0.5em 1.6em;
+}
+
+.navbar a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar li:hover{
+  background-color: gray;
+}
+
+.navbar button{
+  background-color: #d4d8f0;
+  color: black;
+  border: none;
+}
+
+.navbar button:hover{
+  background-color: #232946;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-modetoggle{
+  height: auto;
+  width: auto;
+  max-width: 3em;
+  max-height: 3em;
+  margin: 1em 0em 0em 0em;
+}
+
+.navbar-calculator-dropdown, .navbar-conversions-dropdown{
+  display: inline-block;
+}
+
+.navbar-calculator-content, .navbar-conversions-content{
+  display: none;
+  background-color: #d4d8f0;
+  position: absolute;
+  margin: 0.5em -1.6em;
+  gap: 1em;
+}
+
+.navbar-calculator-content{
+  padding: 1em 2.9em;
+}
+
+.navbar-conversions-content{
+  padding: 1em 3.4em;
+}
+
+.navbar-calculator-dropdown:hover .navbar-calculator-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-conversions-dropdown:hover .navbar-conversions-content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+/* Home */
+
+.home-sitetitle{
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: #ce8964;
+  padding: 0em 0em 1em 0em;
+}
+
+.home-details{
+  display: flex;
+  flex-direction: column;
+  background-color: #d4d8f0;
+}
+
+.home-card{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 2em 2em;
+  border-radius: 1em;
+  box-shadow: -0.6em 0.6em gray;
+}
+
+.home-subheading, .home-subbody{
+  color: #232946;
+}
+
+.home-subheading{
+  border-bottom: 0.1em solid;
+}
+
+.home-subbody{
+  display: flex;
+  flex-direction: row;
+}
+
+.home-subbody h5{
+  margin: 2em;
+}
+
+.home-subbody img{
+  margin: 1em 0.5em 1em 0;
+}
+
+/* Time Calculator */
+
+.animatednumber h3 {
+  display: inline-block;
+  padding-right: 1em;
+  margin-bottom: 0%;
+}
+
+#animnumbers {
+  display: inline-block;
+}
+
+#timeinput {
+  background-color: #282c34;
+  color: white;
+  border-radius: 0.5em;
+}
+
+select {
+  margin-top: 2em;
+  background-color: #d4d8f0;
+  color: black;
+  border-radius: 0.5em;
+}
+
+select:hover  {
+  background-color: #2d6cd7;
+}
+
+option {
+  background-color: #d4d8f0;
+}
+
 
 /* Everything related to the Clock logo */
 
@@ -30,8 +216,10 @@
 
 .App-hourhand-logo {
   position: absolute;
-  top: 95px;
-  left: 142px;
+  margin: 6em 30em 0em -10em;
+
+  /* top: 95px;
+  left: 142px;*/
   transform-origin: bottom center;
 }
 
@@ -62,112 +250,36 @@
   }
 }
 
-/* Everything related to user input and number display */
-
-h2 {
-  display: inline-block;
-  padding-right: 5px;
-  margin-bottom: 0%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#animnumbers {
-  display: inline-block;
-  color: white;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#timeinputlabel, .dateinput-label {
-  color: white;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#timeinput {
-  background-color: #282c34;
-  color: white;
-  border-radius: 20px;
-}
-
-select {
-  margin-top: 10%;
-  background-image: linear-gradient(to right, rgb(176, 13, 176), pink);
-  color: white;
-  border-radius: 20px;
-}
-
-select:hover  {
-  font-size: 15px;
-}
-
-option {
-  background-color: purple;
-}
-
 /* AgeCalculator */
+
 #dateinput{
-  color: white;
-  background-image: linear-gradient(22deg, #00d66b, #c6c6c6);
+  color: black;
+  background-color: #d4d8f0;
+  margin: 2em 0 0 0;
   
 }
 
-/* Navbar */
-
-.navbar-main {
-  background-color: #1d2025;
+#dateinput:hover{
   color: white;
-  display: flex;
-  font-size: small;
-  align-items: center;
-}
-
-.navbar-sitetitle{
-  font-size: x-large;
-}
-
-.navbar ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li{
-  float: left;
-  padding: 2%;
-  display: block;
-  text-align: center;
-  border-radius: 7%;
-}
-
-.navbar a{
-  text-decoration: none;
-  color: inherit;
-  padding: 5px;
-  margin: -5px;
-}
-
-.navbar li:hover{
-  background-image: linear-gradient(22deg, purple, pink);
-}
-
-.navbar button{
-  /* cursor: pointer; */
-  background-color: #282c34;
-  color: white;
-  border: none;
-}
-
-.navbar button:hover{
-  background-color: purple;
-}
-
-/* Home */
-
-.home-about a{
-  color: inherit;
-  font-weight: 500;
+  background-color: #2d6cd7;
 }
 
 /* Calculator */
+
+.calculator-displayoldexpression, .calculator-displaycurrentexpression{
+  padding: 10px;
+}
+
+.calculator-container{
+  margin: 0 20em;
+  
+}
+
+@media(max-width: 1000px){
+  .calculator-container{
+    margin: 0 5em;
+  }
+}
 
 .calculator-grid{
   display: grid;
@@ -181,8 +293,7 @@ option {
   grid-column: span 3;
 }
 
-.calculator-grid-item-equals{
-  background-color: #2d6cd7;
+.calculator-grid-item-equals, .calculator-grid-item{
   color: white;
   text-align: center;
   padding: 10px;
@@ -191,16 +302,62 @@ option {
 
 .calculator-grid-item{
   background-color: #1d2025;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  display: block;
 }
 
 .calculator-grid-item:hover{
   background-color: #0c0d10;
 }
 
-.calculator-displayoldexpression, .calculator-displaycurrentexpression{
-  padding: 10px;
+.calculator-grid-item-equals{
+  background-color: #2d6cd7;
+}
+
+/* Unit Calculator */
+
+.wholecontainer{
+  display: flex;
+  flex-direction: row;
+  margin: 0em 1em;
+}
+
+.checkboxcontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ce8964;
+  margin: 0em 0em 3em 0em;
+  padding: 0em 0em 1.5em 0em;
+  gap: 1em;
+}
+
+.checkboxcontainer h3{
+  align-self: center;
+}
+
+.contentcontainer{
+  flex-grow: 1;
+}
+
+.unitcheckbox{
+  display: flex;
+  flex-direction: row;
+}
+
+.unit-values{
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 1em 0;
+}
+
+.unitselect{
+  text-align: center;
+  border-radius: 5px;
+  background-color: #d4d8f0;
+  color: black;
+}
+
+#unitinput {
+  background-color: #282c34;
+  color: white;
+  border-radius: 7px;
 }

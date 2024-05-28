@@ -25,11 +25,15 @@ function AgeCalculator(){
 
     return(
         <div className="agecalc-home">
-            <h1> Age Calculator </h1>
-            <h2>Insert image here</h2>
+            <div>
+                <h1> Age Calculator </h1>
+                <h2>Insert image here</h2>
+            </div>
             <div>
                 <label htmlFor='dateinput' className='dateinput-label'> Enter your birth date: </label>
                 <input id="dateinput" type="date" max={maxDate} onChange={(e) => { checkBirthday(new Date(e.target.value));}}></input>
+            </div>
+            <div>
                 <h1> You are {age} years old! </h1>
             </div>
         </div>
