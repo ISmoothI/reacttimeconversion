@@ -1,5 +1,7 @@
 import { useEffect, useState} from 'react';
 
+import calculatorLogo from './imgs/Calculator.png';
+
 function Calculator(){
     const [expression, setExpression] = useState([]);
     const [number, setNumber] = useState("");
@@ -131,36 +133,39 @@ function Calculator(){
     );
 
     return(
-        <div className="calculator-main">
+        <div className='calculator-main'>
             <div>
                 <h1>Basic Calculator</h1>
+                <img src={calculatorLogo} alt='' className='pagelogo'></img>
             </div>
-            <div className='calculator-displayoldexpression'>
-                <h2>{previousExpression} = {displayOutput}</h2>
-            </div>
-            <div className='calculator-displaycurrentexpression'>
-                <h2>{expression}</h2>
-            </div>
-            <div className='calculator-container'>
-                <div className="calculator-grid">
-                    <input className="calculator-grid-textinput" type="text" readOnly value={number} onKeyDown={(e) => { checkInput(e.key);}}></input>
-                    <input className="calculator-grid-item" type="button" value={"C"} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={7} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={8} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={9} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={"/"} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={4} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={5} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={6} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={"*"} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={1} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={2} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={3} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={"-"} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={0} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={"."} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item-equals" type="button" value={"="} onClick={(e) => { checkInput(e.target.value);}}></input>
-                    <input className="calculator-grid-item" type="button" value={"+"} onClick={(e) => { checkInput(e.target.value);}}></input>
+            <div className='pagecontent'>
+                <div className='calculator-displayoldexpression'>
+                    <h2>{previousExpression} = {displayOutput}</h2>
+                </div>
+                <div className='calculator-displaycurrentexpression'>
+                    <h2>{expression}</h2>
+                </div>
+                <div className='calculator-container'>
+                    <div className='calculator-grid'>
+                        <input className='calculator-grid-textinput' type='text' readOnly value={number} onKeyDown={(e) => { checkInput(e.key);}}></input>
+                        <input className='calculator-grid-item' type='button' value={'C'} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={7} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={8} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={9} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={'/'} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={4} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={5} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={6} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={'*'} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={1} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={2} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={3} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={'-'} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={0} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={'.'} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item-equals' type='button' value={'='} onClick={(e) => { checkInput(e.target.value);}}></input>
+                        <input className='calculator-grid-item' type='button' value={'+'} onClick={(e) => { checkInput(e.target.value);}}></input>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import AnimateNumber from './AnimateNumber';
 
-import clockLogo from './imgs/Clock.png';
-import hourHandLogo from './imgs/HourHand.png';
-import minuteHandLogo from './imgs/MinuteHand.png';
+import clockLogo from './imgs/PixelClock.png';
 
 function TimeCalculator(){
   const [holdPrevValue, setHoldPrevValue] = useState(0);
@@ -46,25 +44,23 @@ function TimeCalculator(){
 
   
   return(
-    <div className="timecalculator-main">
+    <div className='timecalculator-main'>
       <h1>Time Calculator</h1>
       <div className='logohold'>
-        <img src={clockLogo} className="App-clock-logo" alt="clocklogo" />
-        <img src={hourHandLogo} className="App-hourhand-logo" alt="hourlogo" />
-        <img src={minuteHandLogo} className="App-minutehand-logo" alt="minutelogo" />
+        <img src={clockLogo} alt='clocklogo'  className='pagelogo'/>
       </div>
       <div>
-        <AnimateNumber preText={"Seconds: "} num={secondsVal}></AnimateNumber>
-        <AnimateNumber preText={"Minutes: "} num={minutesVal}></AnimateNumber>
-        <AnimateNumber preText={"Hours: "} num={hoursVal}></AnimateNumber>
+        <AnimateNumber preText={'Seconds: '} num={secondsVal}></AnimateNumber>
+        <AnimateNumber preText={'Minutes: '} num={minutesVal}></AnimateNumber>
+        <AnimateNumber preText={'Hours: '} num={hoursVal}></AnimateNumber>
       </div>
       <div>
-        <label id='timeinputlabel' htmlFor="timeinput">{"Convert: "}</label>
+        <label id='timeinputlabel' htmlFor='timeinput'>{'Convert: '}</label>
         <input id='timeinput' type='number' min='0' placeholder='Insert number here...' onChange={(e) => { setHoldPrevValue(e.target.valueAsNumber); }}></input>
-        <select name="time" id="time" onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
-          <option value="seconds">Seconds</option>
-          <option value="minutes">Minutes</option>
-          <option value="hours">Hours</option>
+        <select name='time' id='time' onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
+          <option value='seconds'>Seconds</option>
+          <option value='minutes'>Minutes</option>
+          <option value='hours'>Hours</option>
         </select>
       </div>
     </div>

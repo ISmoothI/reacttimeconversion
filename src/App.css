@@ -1,6 +1,5 @@
-/* .App {
-  @import url();
-} */
+
+/* General Styles for Multiple Pages */
 
 * {
   font-family: "Krona One", sans-serif;
@@ -8,20 +7,45 @@
   font-style: normal;
 }
 
-.timecalculator-main, .agecalc-home, .home-main, .calculator-main, .unitcalculator-main {
+html {
   background-color: #232946;
-  background-position: top;
-  background-repeat: repeat;
-  background-size: contain;
-  min-height: 100vh;
+}
+
+.timecalculator-main, .agecalc-home, .home-main, .calculator-main, .unitcalculator-main {
   display: flex;
   flex-direction: column;
-  padding: 2em 0em 0em 0em;
-  /* justify-content: center; */
+  padding: 2em 0em 10em 0em;
+  gap: 1em;
   font-size: calc(5px + 2vmin);
   color: white;
   text-align: center;
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+.home-main {
+  padding: 2em 0em 0em 0em;
+}
+
+.pagelogo{
+  transform: scale(2);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+select {
+  margin-top: 2em;
+  background-color: #d4d8f0;
+  color: black;
+  border-radius: 0.5em;
+}
+
+select:hover  {
+  background-color: #2d6cd7;
+}
+
+option {
+  background-color: #d4d8f0;
 }
 
 footer{
@@ -144,6 +168,12 @@ footer{
   box-shadow: -0.6em 0.6em gray;
 }
 
+@media(min-width: 1000px){
+  .home-card{
+    margin: 2em 8em;
+  }
+}
+
 .home-subheading, .home-subbody{
   color: #232946;
 }
@@ -165,7 +195,20 @@ footer{
   margin: 1em 0.5em 1em 0;
 }
 
+@media(max-width: 1000px){
+  .home-subbody{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+}
+
 /* Time Calculator */
+
+.timecalculator-main{
+  gap: 3em;
+}
 
 .animatednumber h3 {
   display: inline-block;
@@ -183,74 +226,15 @@ footer{
   border-radius: 0.5em;
 }
 
-select {
-  margin-top: 2em;
-  background-color: #d4d8f0;
-  color: black;
-  border-radius: 0.5em;
-}
-
-select:hover  {
-  background-color: #2d6cd7;
-}
-
-option {
-  background-color: #d4d8f0;
-}
-
-
-/* Everything related to the Clock logo */
-
-.logohold {
-  position: relative;
-  top: 0;
-  left: 0;
-  margin-bottom: 0;
-}
-
-.App-clock-logo {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.App-hourhand-logo {
-  position: absolute;
-  margin: 6em 30em 0em -10em;
-
-  /* top: 95px;
-  left: 142px;*/
-  transform-origin: bottom center;
-}
-
-.App-minutehand-logo {
-  position: absolute;
-  top: 36px;
-  left: 140px;
-  transform-origin: bottom center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-minutehand-logo {
-    animation: App-logo-spin infinite linear;
-    animation-duration: 60s;
-  }
-
-  .App-hourhand-logo {
-    animation: App-logo-spin infinite 120s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* AgeCalculator */
+
+.agecalc-home{
+  gap: 2em;
+}
+
+.agecalc-home img{
+  padding: 2em 0em 0em 0em;
+}
 
 #dateinput{
   color: black;
@@ -265,6 +249,10 @@ option {
 }
 
 /* Calculator */
+
+.calculator-main img{
+  padding: 1em;
+}
 
 .calculator-displayoldexpression, .calculator-displaycurrentexpression{
   padding: 10px;

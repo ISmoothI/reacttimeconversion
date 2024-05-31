@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import AnimateNumber from './AnimateNumber';
 import UnitCheckbox from './UnitCheckbox';
 
+import unitLogo from './imgs/Ruler.png'
+
 function UnitCalculator() {
     const [holdPrevValue, setHoldPrevValue] = useState(0);
     const [optionChosen, setOptionChosen] = useState("Inch");
@@ -114,10 +116,10 @@ function UnitCalculator() {
 
     return(
 
-        <div className="unitcalculator-main">
+        <div className='unitcalculator-main'>
             <div>
                 <h1>Unit Calculator</h1>
-                <h2>Insert image</h2>
+                <img src={unitLogo} alt=''  className='pagelogo'></img>
             </div>
             <div className='wholecontainer'>
                 <div className='checkboxcontainer'>
@@ -133,27 +135,27 @@ function UnitCalculator() {
                 </div>
                 <div className='contentcontainer'>
                     <div className='unit-values'>
-                        { inches.visible && <AnimateNumber preText={"Inches: "} num={inches.value}></AnimateNumber> }
-                        { foot.visible && <AnimateNumber preText={"Feet: "} num={foot.value}></AnimateNumber> }
-                        { kilometers.visible && <AnimateNumber preText={"Kilometers: "} num={kilometers.value}></AnimateNumber> }
-                        { meters.visible && <AnimateNumber preText={"Meters: "} num={meters.value}></AnimateNumber> }
-                        { centimeters.visible && <AnimateNumber preText={"Centimeters: "} num={centimeters.value}></AnimateNumber> }
-                        { millimeters.visible && <AnimateNumber preText={"Millimeters: "} num={millimeters.value}></AnimateNumber> }
-                        { mile.visible && <AnimateNumber preText={"Miles: "} num={mile.value}></AnimateNumber>}
-                        { yard.visible &&<AnimateNumber preText={"Yards: "} num={yard.value}></AnimateNumber> }
+                        { inches.visible && <AnimateNumber preText={'Inches: '} num={inches.value}></AnimateNumber> }
+                        { foot.visible && <AnimateNumber preText={'Feet: '} num={foot.value}></AnimateNumber> }
+                        { kilometers.visible && <AnimateNumber preText={'Kilometers: '} num={kilometers.value}></AnimateNumber> }
+                        { meters.visible && <AnimateNumber preText={'Meters: '} num={meters.value}></AnimateNumber> }
+                        { centimeters.visible && <AnimateNumber preText={'Centimeters: '} num={centimeters.value}></AnimateNumber> }
+                        { millimeters.visible && <AnimateNumber preText={'Millimeters: '} num={millimeters.value}></AnimateNumber> }
+                        { mile.visible && <AnimateNumber preText={'Miles: '} num={mile.value}></AnimateNumber>}
+                        { yard.visible &&<AnimateNumber preText={'Yards: '} num={yard.value}></AnimateNumber> }
                     </div>
-                    <div>
-                        <label id='unitinput-label' htmlFor="unitinput">{"Convert: "}</label>
+                    <div className='unit-userinputs'>
+                        <label id='unitinput-label' htmlFor='unitinput'>{'Convert: '}</label>
                         <input id='unitinput' type='number' min='0' placeholder='Insert number here...' onChange={(e) => { setHoldPrevValue(e.target.valueAsNumber); }}></input>
-                        <select className='unitselect' name="unit" id="unit" onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
-                            <option value="inch">Inch</option>
-                            <option value="foot">Foot</option>
-                            <option value="kilometer">Kilometer</option>
-                            <option value="meter">Meter</option>
-                            <option value="centimeter">Centimeter</option>
-                            <option value="millimeter">Millimeter</option>
-                            <option value="mile">Mile</option>
-                            <option value="yard">Yard</option>
+                        <select className='unitselect' name='unit' id='unit' onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
+                            <option value='inch'>Inch</option>
+                            <option value='foot'>Foot</option>
+                            <option value='kilometer'>Kilometer</option>
+                            <option value='meter'>Meter</option>
+                            <option value='centimeter'>Centimeter</option>
+                            <option value='millimeter'>Millimeter</option>
+                            <option value='mile'>Mile</option>
+                            <option value='yard'>Yard</option>
                         </select>
                     </div>
                 </div>

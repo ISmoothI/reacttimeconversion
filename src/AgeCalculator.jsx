@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import cakeLogo from './imgs/Cake.png'
+
 function AgeCalculator(){
     var maxDate = new Date().toISOString().split("T")[0];
     const [age, setAge] = useState("today");
@@ -24,14 +26,14 @@ function AgeCalculator(){
     }
 
     return(
-        <div className="agecalc-home">
+        <div className='agecalc-home'>
             <div>
                 <h1> Age Calculator </h1>
-                <h2>Insert image here</h2>
+                <img src={cakeLogo} alt=''  className='pagelogo'/>
             </div>
             <div>
                 <label htmlFor='dateinput' className='dateinput-label'> Enter your birth date: </label>
-                <input id="dateinput" type="date" max={maxDate} onChange={(e) => { checkBirthday(new Date(e.target.value));}}></input>
+                <input id='dateinput' type='date' max={maxDate} onChange={(e) => { checkBirthday(new Date(e.target.value));}}></input>
             </div>
             <div>
                 <h1> You are {age} years old! </h1>

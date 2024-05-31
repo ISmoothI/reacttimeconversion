@@ -59,27 +59,24 @@ function App() {
   return (
     <>
       {/* <Nav/> */}
-      <div className="navbar-main">
+      <div className='navbar-main'>
         <header>
-          <nav className="navbar">
-            <h1 className="navbar-sitetitle">
-              <a href="/reacttimeconversion">YACW</a>
+          <nav className='navbar'>
+            <h1 className='navbar-sitetitle'>
+              <a href='/reacttimeconversion'>YACW</a>
             </h1>
             <ul className='navbar-siteoptions'>
-              {/* <li>
-                <a>Whats New?</a>
-              </li> */}
               <li className='navbar-calculator-dropdown'>
                 <div>
                   <h4>Calculators</h4>
                   <div className='navbar-calculator-content'>
                     <div className='nav-options'>
                       <button onClick={addAgeCalcComponent}>+</button>
-                      <a href="/agecalculator">Age</a>
+                      <a href='/agecalculator'>Age</a>
                     </div>
                     <div>
                       <button onClick={addCalculatorComponent}>+</button>
-                      <a href="/calculator">Basic</a>
+                      <a href='/calculator'>Basic</a>
                     </div>
                   </div>
                 </div>
@@ -90,11 +87,11 @@ function App() {
                   <div className='navbar-conversions-content'>
                     <div>
                       <button onClick={addTimeCalcComponent}>+</button>
-                      <a href="/timecalculator">Time</a>
+                      <a href='/timecalculator'>Time</a>
                     </div>
                     <div>
                       <button onClick={addUnitCalcComponent}>+</button>
-                      <a href="/unitcalculator">Unit</a>
+                      <a href='/unitcalculator'>Unit</a>
                     </div>
                   </div>
                 </div>
