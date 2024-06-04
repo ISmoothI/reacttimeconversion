@@ -136,7 +136,7 @@ function Calculator(){
         <div className='calculator-main'>
             <div>
                 <h1>Basic Calculator</h1>
-                <img src={calculatorLogo} alt='' className='pagelogo'></img>
+                <img src={calculatorLogo} alt='Pixel art of a calculator' className='pagelogo'></img>
             </div>
             <div className='pagecontent'>
                 <div className='calculator-displayoldexpression'>

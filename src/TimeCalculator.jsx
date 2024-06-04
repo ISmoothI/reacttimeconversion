@@ -47,7 +47,7 @@ function TimeCalculator(){
     <div className='timecalculator-main'>
       <h1>Time Calculator</h1>
       <div className='logohold'>
-        <img src={clockLogo} alt='clocklogo'  className='pagelogo'/>
+        <img src={clockLogo} alt='Pixel art of a clock'  className='pagelogo'/>
       </div>
       <div>
         <AnimateNumber preText={'Seconds: '} num={secondsVal}></AnimateNumber>

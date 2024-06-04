@@ -8,7 +8,7 @@ import AgeCalculator from './AgeCalculator.jsx';
 import TimeCalculator from './TimeCalculator.jsx';
 import Calculator from './Calculator.jsx';
 import UnitCalculator from './UnitCalculator.jsx';
-import lightmode from './imgs/sunfigma.png'
+import calcLogo from './imgs/Calculator.png';
 
 //Main website display
 function App() {
@@ -97,7 +97,7 @@ function App() {
                 </div>
               </li>
             </ul>
-            <img className='navbar-modetoggle' src={lightmode} alt='Sun'/>
+            <img className='navbar-modetoggle' src={calcLogo} alt='Pixel art of a calculator'/>
           </nav>
         </header>
       </div>

@@ -29,7 +29,7 @@ function AgeCalculator(){
         <div className='agecalc-home'>
             <div>
                 <h1> Age Calculator </h1>
-                <img src={cakeLogo} alt=''  className='pagelogo'/>
+                <img src={cakeLogo} alt='Pixel art of a cake'  className='pagelogo'/>
             </div>
             <div>
                 <label htmlFor='dateinput' className='dateinput-label'> Enter your birth date: </label>

@@ -349,3 +349,9 @@ footer{
   color: white;
   border-radius: 7px;
 }
+
+@media(min-width: 1000px){
+  .contentcontainer{
+    margin: 0 8em 0 0em;
+  }
+}

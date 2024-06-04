@@ -119,7 +119,7 @@ function UnitCalculator() {
         <div className='unitcalculator-main'>
             <div>
                 <h1>Unit Calculator</h1>
-                <img src={unitLogo} alt=''  className='pagelogo'></img>
+                <img src={unitLogo} alt='Pixel art of a ruler'  className='pagelogo'></img>
             </div>
             <div className='wholecontainer'>
                 <div className='checkboxcontainer'>
@@ -145,7 +145,7 @@ function UnitCalculator() {
                         { yard.visible &&<AnimateNumber preText={'Yards: '} num={yard.value}></AnimateNumber> }
                     </div>
                     <div className='unit-userinputs'>
-                        <label id='unitinput-label' htmlFor='unitinput'>{'Convert: '}</label>
+                        <label id='unitinput-label' htmlFor='unitinput'>{"Convert: "}</label>
                         <input id='unitinput' type='number' min='0' placeholder='Insert number here...' onChange={(e) => { setHoldPrevValue(e.target.valueAsNumber); }}></input>
                         <select className='unitselect' name='unit' id='unit' onChange={(e) => { setOptionChosen(e.target.childNodes[e.target.selectedIndex].textContent); }}>
                             <option value='inch'>Inch</option>
