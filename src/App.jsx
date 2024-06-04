@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useSpring, animated } from '@react-spring/web'
+import { HashRouter, Route, Routes, Link } from 'react-router-dom';
 
 import './App.css';
 // import Nav from './Nav.jsx';
@@ -15,6 +15,10 @@ function App() {
   let component;
   const [count, setCount] = useState(0);
   const [components, setComponents] = useState([]);
+
+  function removeComponents(){
+    setComponents([]);
+  }
 
   function addCalculatorComponent(){
     setComponents(a => a = [...a, React.cloneElement(<Calculator />, {key: count})]);
@@ -40,65 +44,58 @@ function App() {
     // console.log(components);
   }
 
-  if(window.location.pathname === "/reacttimeconversion"){
-    component = <Home/>;
-  }
-  else if(window.location.pathname === "/timecalculator"){
-    component = <TimeCalculator/>;
-  }
-  else if(window.location.pathname === "/agecalculator"){
-    component = <AgeCalculator/>;
-  }
-  else if(window.location.pathname === "/calculator"){
-    component = <Calculator/>;
-  }
-  else if(window.location.pathname === "/unitcalculator"){
-    component = <UnitCalculator/>;
-  }
-
   return (
     <>
       {/* <Nav/> */}
       <div className='navbar-main'>
         <header>
-          <nav className='navbar'>
-            <h1 className='navbar-sitetitle'>
-              <a href='/reacttimeconversion'>YACW</a>
-            </h1>
-            <ul className='navbar-siteoptions'>
-              <li className='navbar-calculator-dropdown'>
-                <div>
-                  <h4>Calculators</h4>
-                  <div className='navbar-calculator-content'>
-                    <div className='nav-options'>
-                      <button onClick={addAgeCalcComponent}>+</button>
-                      <a href='/agecalculator'>Age</a>
-                    </div>
-                    <div>
-                      <button onClick={addCalculatorComponent}>+</button>
-                      <a href='/calculator'>Basic</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className='navbar-conversions-dropdown'>
-                <div>
-                  <h4>Conversions</h4>
-                  <div className='navbar-conversions-content'>
-                    <div>
-                      <button onClick={addTimeCalcComponent}>+</button>
-                      <a href='/timecalculator'>Time</a>
-                    </div>
-                    <div>
-                      <button onClick={addUnitCalcComponent}>+</button>
-                      <a href='/unitcalculator'>Unit</a>
+          <HashRouter>
+            <nav className='navbar'>
+              <h1 className='navbar-sitetitle'>
+                <Link to="/" onClick={removeComponents}>YACW</Link>
+              </h1>
+              <ul className='navbar-siteoptions'>
+                <li className='navbar-calculator-dropdown'>
+                  <div>
+                    <h4>Calculators</h4>
+                    <div className='navbar-calculator-content'>
+                      <div className='nav-options'>
+                        <button onClick={addAgeCalcComponent}>+</button>
+                        <Link to="/agecalculator" onClick={removeComponents}>Age</Link>
+                      </div>
+                      <div>
+                        <button onClick={addCalculatorComponent}>+</button>
+                        <Link to="/calculator" onClick={removeComponents}>Basic</Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-            <img className='navbar-modetoggle' src={calcLogo} alt='Pixel art of a calculator'/>
-          </nav>
+                </li>
+                <li className='navbar-conversions-dropdown'>
+                  <div>
+                    <h4>Conversions</h4>
+                    <div className='navbar-conversions-content'>
+                      <div>
+                        <button onClick={addTimeCalcComponent}>+</button>
+                        <Link to="/timecalculator" onClick={removeComponents}>Time</Link>
+                      </div>
+                      <div>
+                        <button onClick={addUnitCalcComponent}>+</button>
+                        <Link to="/unitcalculator" onClick={removeComponents}>Unit</Link>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <img className='navbar-modetoggle' src={calcLogo} alt='Pixel art of a calculator'/>
+            </nav>
+            <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/agecalculator' element={<AgeCalculator/>} />
+              <Route path='/calculator' element={<Calculator/>} />
+              <Route path='/timecalculator' element={<TimeCalculator/>} />
+              <Route path='/unitcalculator' element={<UnitCalculator/>} />
+            </Routes>
+          </HashRouter>
         </header>
       </div>
       {component}

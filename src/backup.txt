@@ -18,3 +18,21 @@ OG Checkbox HTML code:
 <label htmlFor='checkbox-mile'>Miles</label>
 <input id='checkbox-yard' type='checkbox' onChange={() => { setYard({value: yard.value, visible: !yard.visible}); }}></input>
 <label htmlFor='checkbox-yard'>Yard</label>
+
+------------------Old Nav Code---------------------------
+
+  // if(window.location.pathname === "/reacttimeconversion" || window.location.pathname === "/reacttimeconversion/"){
+  //   component = <Home/>;
+  // }
+  // else if(window.location.pathname === "/reacttimeconversion/timecalculator" || window.location.pathname === "/reacttimeconversion/timecalculator/"){
+  //   component = <TimeCalculator/>;
+  // }
+  // else if(window.location.pathname === "/agecalculator"){
+  //   component = <AgeCalculator/>;
+  // }
+  // else if(window.location.pathname === "/calculator"){
+  //   component = <Calculator/>;
+  // }
+  // else if(window.location.pathname === "/unitcalculator"){
+  //   component = <UnitCalculator/>;
+  // }
